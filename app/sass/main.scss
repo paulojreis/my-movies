@@ -1,0 +1,59 @@
+@import 'node_modules/skeleton-css/css/normalize';
+@import 'node_modules/skeleton-css/css/skeleton';
+
+$navbarHeight: 6.5rem;
+$negativeActionBtnColor: #C0392B;
+
+.app {
+    padding-top: $navbarHeight;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $navbarHeight;
+    background: #FFF;
+    z-index: 99;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+}
+    .navbar-link {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .2rem;
+        text-decoration: none;
+        margin-right: $navbarHeight / 2;
+        line-height: $navbarHeight;
+        color: #222;        
+    }
+
+.content {
+    padding-top: $navbarHeight / 2;
+}
+
+.movieposter-cell {
+    width: 100px;
+}
+
+.button.button-negative,
+button.button-negative,
+input[type="submit"].button-negative,
+input[type="reset"].button-negative,
+input[type="button"].button-negative {
+    color: #FFF;
+    background-color: $negativeActionBtnColor;
+    border-color: $negativeActionBtnColor;
+
+    &:hover,
+    &:focus {
+        background-color: darken($negativeActionBtnColor, 10);
+        border-color: darken($negativeActionBtnColor, 10);
+    }
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}

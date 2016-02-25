@@ -1,0 +1,52 @@
+<div class="container">
+    <h4>Search</h4>  
+    <div>
+        <input  class="u-full-width"
+                type="text"
+                placeholder="Search ..."
+                ng-model="searchVM.query"
+                ng-model-options="{ updateOn: 'input', debounce: 400 }"
+                ng-change="searchVM.queryChanged()">
+    </div>
+    <div class="row">
+        <h4 ng-hide="!searchVM.query">Search results for "{{ searchVM.query }}"</h4>
+        <table ng-hide="!searchVM.results.length" class="u-full-width">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Year</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="result in searchVM.results">
+                    <td class="movieposter-cell">
+                        <img class="u-max-full-width"
+                             ng-if="result.Poster !== 'N/A'"
+                             ng-src="{{ result.Poster }}"
+                             alt="{{ result.Title }}" />
+                    </td>
+                    <td>{{ result.Title }}</td>
+                    <td>{{ result.Type }}</td>
+                    <td>{{ result.Year }}</td>
+                    <td>
+                        <button class="button-block" ui-sref="movie({ IMDBId: result.imdbID })">Details</button>
+                        <button class="button-primary button-block" 
+                                ng-hide="searchVM.isInWatchlist(result.imdbID)" 
+                                ng-click="searchVM.addToWatchlist(result.imdbID)">
+                                Add
+                        </button>
+                        <button class="button-negative button-block" 
+                                ng-hide="!searchVM.isInWatchlist(result.imdbID)" 
+                                ng-click="searchVM.removeFromWatchlist(result.imdbID)">
+                                Remove
+                        </button>
+                    </td>
+                </tr>              
+            </tbody>
+        </table>
+        <div ng-hide="searchVM.results.length">No results found.</div>
+    </div>
+</div>

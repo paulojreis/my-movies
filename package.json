@@ -1,0 +1,23 @@
+{
+  "name": "my-movies",
+  "version": "0.0.1",
+  "description": "Movies watchlist - a demo project.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "lodash": "^4.5.1",
+    "skeleton-css": "^2.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^2.3.1",
+    "gulp-sass": "^2.2.0",
+    "browserify": "^13.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Jorge Reis"
+}

@@ -1,0 +1,40 @@
+<div class="u-full-width">
+    <table class="u-full-width">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Type</th>
+                <th>Genre</th>
+                <th>Director</th>
+                <th>Rating (IMDB)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in watchlistDirVM.viewList | filter: watchlistDirVM.filter |orderBy: '-added' | limitTo: watchlistDirVM.limit track by item.imdbID">
+                <td class="movieposter-cell">
+                    <img class="u-max-full-width"
+                         ng-if="item.Poster !== 'N/A'"
+                         ng-src="{{ item.Poster }}"
+                         alt="{{ item.Title }}" />
+                </td>
+                <td>{{ item.Title }}</td>
+                <td>{{ item.Year }}</td>
+                <td>{{ item.Type }}</td>
+                <td>{{ item.Genre }}</td>
+                <td>{{ item.Director }}</td>
+                <td>{{ item.imdbRating }}</td>
+                <td>
+                    <button class="button-block" ui-sref="movie({ IMDBId: item.imdbID })">Details</button>
+                    <button class="button-negative button-block" 
+                        ng-click="watchlistDirVM.removeFromWatchlist(item.imdbID)">
+                        Remove
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
