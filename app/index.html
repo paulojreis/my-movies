@@ -1,15 +1,20 @@
 <!DOCTYPE html>
+<!-- @if DEBUG -->
 <html lang="en" ng-app="MyMovies">
-<head>
-    <meta charset="UTF-8">
-    <title>My App</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body class="app">
-    <div ng-controller="AppController">
-        <header ui-view="header"></header>
-        <main ui-view="content" class="content"></main>
-    </div>
-    <script src="/js/main.js"></script>
-</body>
+<!-- @endif -->
+<!-- @if !DEBUG -->
+<html lang="en" ng-app="MyMovies" ng-strict-di>
+<!-- @endif -->
+    <head>
+        <meta charset="UTF-8">
+        <title>My App</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body class="app">
+        <div ng-controller="AppController">
+            <header ui-view="header"></header>
+            <main ui-view="content" class="content"></main>
+        </div>
+        <script src="/js/main.js"></script>
+    </body>
 </html>

@@ -1,5 +1,6 @@
 'use strict';
 
+/*@ngInject*/
 module.exports = function ($state, $stateParams, OMDBService, WatchlistService) {
     var movieDetailsVM = this;
 

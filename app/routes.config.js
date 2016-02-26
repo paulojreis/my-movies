@@ -1,5 +1,6 @@
 'use strict';
 
+/*@ngInject*/
 module.exports = function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 

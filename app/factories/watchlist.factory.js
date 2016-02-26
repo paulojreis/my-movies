@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 
+/*@ngInject*/
 module.exports = function ($window, $q) {
     var STORAGE_KEY = 'mymovies';
 

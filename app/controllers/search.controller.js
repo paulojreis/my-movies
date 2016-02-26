@@ -1,5 +1,6 @@
 'use strict';
 
+/*@ngInject*/
 module.exports = function ($stateParams, OMDBService, WatchlistService) {
     var searchVM = this;
 

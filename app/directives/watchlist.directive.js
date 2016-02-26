@@ -1,5 +1,7 @@
 'use strict';
 
+var angular = require('angular');
+
 module.exports = function () {
     return {
         restrict: 'E',
@@ -13,6 +15,7 @@ module.exports = function () {
         templateUrl: './directives/watchlist.tpl.html'
     };
 
+    /*@ngInject*/
     function watchlistController ($scope, $element, $attrs, $transclude, WatchlistService) {
         var watchlistDirVM = this;
 
@@ -37,6 +40,6 @@ module.exports = function () {
 
                     angular.copy(watchlistDirVM.rawlist, watchlistDirVM.viewList);
                 });
-        }
+        };
     }
 };

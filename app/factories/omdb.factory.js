@@ -1,5 +1,6 @@
 'use strict';
 
+/*@ngInject*/
 module.exports = function ($http, $q) {
     var BASE_URL = 'http://www.omdbapi.com/?',
         service  = {
