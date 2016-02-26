@@ -1,0 +1,10 @@
+<div class="container">
+    <h4 class="u-pull-left">Watchlist</h4>
+    <input  class="u-pull-right"
+            type="text"
+            placeholder="Filter"
+            ng-model="dashboardVM.filter"
+            ng-model-options="{ updateOn: 'input', debounce: 400 }">
+
+    <watchlist filter="dashboardVM.filter"></watchlist>
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+    <h4>{{ movieDetailsVM.movie.Title }}</h4>
+    <div class="row">
+        <div ng-if="movieDetailsVM.movie.Poster !== 'N/A'" class="four columns">
+            <img class="u-max-full-width"
+                 ng-src="{{ movieDetailsVM.movie.Poster }}"
+                 alt="{{ movieDetailsVM.movie.Title }}" />
+        </div>
+        <div ng-class="movieDetailsVM.movie.Poster !== 'N/A' ? 'eight columns' : 'twelve columns'">
+            <table class="u-full-width">
+                <tr ng-if="movieDetailsVM.movie.Director">
+                    <td>Director</td>
+                    <td>{{ movieDetailsVM.movie.Director }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Actors">
+                    <td>Cast</td>
+                    <td>{{ movieDetailsVM.movie.Actors }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Genre">
+                    <td>Genre</td>
+                    <td>{{ movieDetailsVM.movie.Genre }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Country">
+                    <td>Country</td>
+                    <td>{{ movieDetailsVM.movie.Country }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Released">
+                    <td>Released</td>
+                    <td>{{ movieDetailsVM.movie.Released }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Awards">
+                    <td>Awards</td>
+                    <td>{{ movieDetailsVM.movie.Awards }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Rating">
+                    <td>Rating</td>
+                    <td>{{ movieDetailsVM.movie.Rating }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.Runtime">
+                    <td>Runtime</td>
+                    <td>{{ movieDetailsVM.movie.Runtime }}</td>
+                </tr>
+                <tr ng-if="movieDetailsVM.movie.imdbRating">
+                    <td>Rating</td>
+                    <td>{{ movieDetailsVM.movie.imdbRating }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <h5>Plot</h5>
+        <p>{{ movieDetailsVM.movie.Plot }}</p>
+        <button class="button-primary"
+                ng-hide="movieDetailsVM.isInWatchlist" 
+                ng-click="movieDetailsVM.addToWatchlist()">
+                Add
+        </button>
+        <button class="button-negative"
+                ng-hide="!movieDetailsVM.isInWatchlist" 
+                ng-click="movieDetailsVM.removeFromWatchlist()">
+                Remove
+        </button>
+    </div>
+</div>
